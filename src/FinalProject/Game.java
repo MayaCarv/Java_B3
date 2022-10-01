@@ -25,7 +25,7 @@ public class Game {
         return input.nextLine();
     }
 
-        public static void playGame(char [][] board, Players player1, Players player2) {
+    public static void playGame(char [][] board, Players player1, Players player2) {
         Board.showBoard(board);
         int over = 0;
         while (over == 0) {

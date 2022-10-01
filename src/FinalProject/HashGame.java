@@ -1,7 +1,7 @@
 package FinalProject;
 
 import java.util.Scanner;
-
+//Ok
 public class HashGame {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
