@@ -27,66 +27,63 @@ public class Game {
 
         public static void playGame(char [][] board, Players player1, Players player2) {
         Board.showBoard(board);
-        while (player1.win == 0 && player2.win == 0) {
-            getShot(board, player1);
-            winGame(board, player1, player2);
-            if (player1.win == 1) {
-                System.out.printf("\n%s win!!\nEnd game.", player1.name);
-                player1.points++;
-                System.out.printf("Scoreboard: %s %d x %s %d",
-                        player1.name, player1.points, player2.name, player2.points);
-                newGame(board, player1, player2);
-            }
-            getShot(board, player2);
-            winGame(board, player1, player2);
-            if (player2.win == 1) {
-                System.out.printf("\n%s win!!\nEnd game.", player2.name);
-                player2.points++;
-                System.out.printf("Scoreboard: %s %d x %s %d",
-                        player1.name, player1.points, player2.name, player2.points);
-                newGame(board, player1, player2);
-            }
+        int over = 0;
+        while (over == 0) {
+            over = getShot(board, player1, over);
+            if (over == 0)
+                over = getShot(board, player2, over);
         }
+        System.out.printf("Scoreboard: %s %d x %s %d",
+                player1.name, player1.points, player2.name, player2.points);
+        newGame(board, player1, player2);
     }
 
-    public static void getShot(char [][] board, Players player) {
+    public static int getShot(char [][] board, Players player, int over) {
         Scanner input = new Scanner(System.in);
-        System.out.printf("\n%s it's your turn to play (%c):", player.name, player.simb);
+        System.out.println(player.name + " it's your turn to play (" + player.simb + "): ");
         String shot = input.nextLine();
         if (shot.length() != 2) {
-            System.err.println("Invalid move!! Try again");
-            getShot(board, player);
-        }
-        else {
+            System.err.println("Enter two numbers!! Try again...\n");
+            getShot(board, player, over);
+        } else {
             int row = shot.charAt(0) - '0';
             int column = shot.charAt(1) - '0';
-            if (row > 2 || column > 2 || board[row][column] != ' ') {
-                System.err.println("Invalid move!! Try again");
-                getShot(board, player);
+            if (row < 0 || row > 2 || column < 0 || column > 2) {
+                System.err.println("Invalid move!! Try again...\n");
+                getShot(board, player, over);
+            } else if (board[row][column] != ' ') {
+                System.err.println("The square is already filled!! Try again...\n");
+                getShot(board, player, over);
             } else {
                 board[row][column] = player.simb;
                 Board.showBoard(board);
+                over = winGame(board, player, over);
+                if (player.win == 1) {
+                    System.out.printf("\n%s win!!\nEnd game.\n", player.name);
+                    player.points++;
+                }
             }
         }
+        return over;
     }
 
-    public static void winGame(char [][] board, Players player1, Players player2){
+    public static int winGame(char [][] board, Players player, int over){
         char win;
 
         win = verifyBoard(board);
         switch (win)
         {
-            case 'O':   player1.win = 1;
-                        break;
-            case 'X':   player2.win = 1;
-                        break;
-            case '-':   System.out.println("End game. Tied game.");
-                        System.out.printf("Scoreboard: %s %d x %s %d",
-                                player1.name, player1.points, player2.name, player2.points);
-                        newGame(board, player1, player2);
+            case 'O':
+            case 'X':
+                player.win = 1;
+                over = 1;
+                break;
+            case '-':   System.out.println("\nEnd game. Tied game.");
+                        over = 1;
                         break;
             default: break;
         }
+        return over;
     }
     public static char verifyBoard(char [][] board) {
         int count = 0;
@@ -114,7 +111,7 @@ public class Game {
     public static void newGame(char [][] board, Players player1, Players player2) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("\nPlay again? (y/n)");
+        System.out.println("\n\nPlay again? (y/n)");
         String again = input.nextLine();
         if (again.equalsIgnoreCase("y")) {
             Board.initBoard(board);
