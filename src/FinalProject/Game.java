@@ -58,56 +58,30 @@ public class Game {
                 board[row][column] = player.simb;
                 Board.showBoard(board);
                 over = winGame(board, player, over);
-                if (player.win == 1) {
-                    System.out.printf("\n%s win!!\nEnd game.\n", player.name);
-                    player.points++;
-                }
             }
         }
         return over;
     }
 
     public static int winGame(char [][] board, Players player, int over){
-        char win;
+        int win;
 
-        win = verifyBoard(board);
+        win = Board.verifyBoard(board);
         switch (win)
         {
-            case 'O':
-            case 'X':
-                player.win = 1;
+            case 1:
+                System.out.printf("\n%s win!!\nEnd game.\n", player.name);
+                player.points++;
                 over = 1;
                 break;
-            case '-':   System.out.println("\nEnd game. Tied game.");
+            case 2:   System.out.println("\nEnd game. Tied game.");
                         over = 1;
                         break;
             default: break;
         }
         return over;
     }
-    public static char verifyBoard(char [][] board) {
-        int count = 0;
 
-        for (int i = 0; i < 3; i++)
-            if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][0] == board[i][2])
-                return board[i][0];
-        for (int i = 0; i < 3; i++)
-            if (board[0][i] != ' ' && board[0][i] == board[1][i] && board[0][i] == board[2][i])
-                return board[0][i];
-        if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[0][0] == board[2][2])
-            return board[0][0];
-        if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[0][2] == board[2][0])
-            return board[0][2];
-        else {
-            for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
-                    if (board[i][j] != ' ')
-                        count++;
-            if (count == 9)
-                return '-';
-        }
-        return ' ';
-    }
     public static void newGame(char [][] board, Players player1, Players player2) {
         Scanner input = new Scanner(System.in);
 
@@ -115,10 +89,7 @@ public class Game {
         String again = input.nextLine();
         if (again.equalsIgnoreCase("y")) {
             Board.initBoard(board);
-            player1.win = 0;
-            player2.win = 0;
             Game.playGame(board, player1, player2);
         }
-        System.exit(0);
     }
 }
