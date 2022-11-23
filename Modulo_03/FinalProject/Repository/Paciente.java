@@ -68,11 +68,6 @@ public class Paciente {
     }
 
     public void setDataNascimento(Date dataNascimento) {
-
-        Calendar hoje = Calendar.getInstance();
-        if (hoje.after(dataNascimento)) {
-            System.err.println("Essa pessoa ainda não nasceu.");
-        }
         this.dataNascimento = dataNascimento;
     }
 
@@ -115,7 +110,7 @@ public class Paciente {
             idade--;
         }
 
-        if (idade < 0) {
+        if (idade < 0 || idade > 120) {
             System.err.println("Data de nascimento inválida!!!");
             return 0;
         }
