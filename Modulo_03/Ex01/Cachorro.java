@@ -1,7 +1,5 @@
 package Java_B3.Modulo_03.Ex01;
 
-import Ex01.Dono;
-
 public class Cachorro {
 
     private String nome;
@@ -10,7 +8,7 @@ public class Cachorro {
     private int idade;
     private boolean estaDoente;
 
-    private Ex01.Dono dono;
+    private Dono dono;
 
 
     private static int contador;
@@ -47,9 +45,9 @@ public class Cachorro {
 
     public void setIdade(int idade) {
         if(idade < 0){
-            System.err.println("Cachorro não pode ter idade negativa");
+            System.err.println("Cachorro nï¿½o pode ter idade negativa");
         } else if(idade > 30) {
-            System.err.println("Não é permitido cachorros com idades superiores a 29 anos");
+            System.err.println("Nï¿½o ï¿½ permitido cachorros com idades superiores a 29 anos");
         } else {
             this.idade = idade;
         }
@@ -79,7 +77,7 @@ public class Cachorro {
         return idade;
     }
 
-    public Ex01.Dono getDono() {
+    public Dono getDono() {
 
         return dono;
     }
