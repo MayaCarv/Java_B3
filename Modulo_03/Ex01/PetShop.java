@@ -1,12 +1,5 @@
 package Java_B3.Modulo_03.Ex01;
 
-import Ex01.Cachorro;
-import Ex01.CadastroCachorro;
-import Ex01.Endereco;
-import Ex01.Internacoes;
-
-import java.util.Scanner;
-
 public class PetShop {
 
     public static void main(String[] args){
