@@ -4,6 +4,7 @@ import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Sort {
@@ -29,7 +30,11 @@ public class Sort {
             System.out.println("4 - Sair");
 
             Scanner scanner = new Scanner(System.in);
-            opcaoSelecionada = scanner.nextInt();
+            try {
+                opcaoSelecionada = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                opcaoSelecionada = 0;
+            }
 
             switch (opcaoSelecionada){
                 case 1:

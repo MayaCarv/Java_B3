@@ -4,9 +4,8 @@ import Java_B3.Modulo_03.FinalProject.Repository.*;
 import Java_B3.Modulo_03.FinalProject.Repository.Sort;
 
 import java.text.ParseException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
-
-import static Java_B3.Modulo_03.FinalProject.Repository.Cadastro.editaPaciente;
 
 public class TelaPaciente {
     private static final PacienteRepository pacienteRepository = new PacienteRepository();
@@ -18,14 +17,17 @@ public class TelaPaciente {
             System.out.println("1 - Cadastrar");
             System.out.println("2 - Ver cadastrados");
             System.out.println("3 - Pesquisar paciente");
-            System.out.println("4 - Editar cadastro");
-            System.out.println("5 - Apagar cadastro");
+            System.out.println("4 - Apagar paciente");
+            System.out.println("5 - Limpar cadastro completo");
             System.out.println("6 - Voltar para menu anterior");
             System.out.println("7 - Sair");
 
             Scanner scanner = new Scanner(System.in);
-            opcaoSelecionada = scanner.nextInt();
-
+            try {
+                opcaoSelecionada = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                opcaoSelecionada = 0;
+            }
             switch (opcaoSelecionada){
                 case 1:
                     try {
@@ -41,7 +43,7 @@ public class TelaPaciente {
                     Search.pesquisar();
                     break;
                 case 4:
-                    editaPaciente();
+                    Cadastro.apagaPaciente();
                     break;
                 case 5:
                     Cadastro.apagaCadastro();

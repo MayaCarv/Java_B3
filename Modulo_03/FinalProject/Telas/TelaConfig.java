@@ -1,5 +1,6 @@
 package Java_B3.Modulo_03.FinalProject.Telas;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TelaConfig {
@@ -16,7 +17,11 @@ public class TelaConfig {
             System.out.println("5 - Sair");
 
             Scanner scanner = new Scanner(System.in);
-            opcaoSelecionada = scanner.nextInt();
+            try {
+                opcaoSelecionada = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                opcaoSelecionada = 0;
+            }
 
             switch (opcaoSelecionada){
                 case 1:

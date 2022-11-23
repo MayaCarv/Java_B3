@@ -2,15 +2,20 @@ package Java_B3.Modulo_03.FinalProject.Repository;
 
 import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Search {
     public static Paciente searchID() {
         System.out.println("\nDigite o ID do paciente desejado: ");
 
+        int id;
         Scanner scanner = new Scanner(System.in);
-        int id = scanner.nextInt();
-
+        try {
+            id = scanner.nextInt();
+        } catch (InputMismatchException e) {
+            id = 0;
+        }
         for (Paciente paciente : PacienteRepository.pacientesCadastrados) {
             if (paciente.getId() == id) {
                 System.out.println(paciente);
@@ -49,7 +54,11 @@ public class Search {
             System.out.println("4 - Sair");
 
             Scanner scanner = new Scanner(System.in);
-            opcaoSelecionada = scanner.nextInt();
+            try {
+                opcaoSelecionada = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                opcaoSelecionada = 0;
+            }
 
             switch (opcaoSelecionada){
                 case 1:

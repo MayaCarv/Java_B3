@@ -2,6 +2,7 @@ package Java_B3.Modulo_03.FinalProject.Repository;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static Java_B3.Modulo_03.FinalProject.Enums.Convenio.getConvenio;
@@ -84,20 +85,74 @@ public class Cadastro {
             System.out.println("_____________NENHUM PACIENTE CADASTRADO_____________\n");
         }
     }
-    public static void editaPaciente() {
+    public static void apagaPaciente() {
         System.out.println("\n*** Edição de Cadastro ***");
 
         Paciente paciente = Search.searchID();
         if (paciente != null) {
+            int opcaoSelecionada;
+            do {
+                System.out.println("\nTem certeza que deseja apagar os dados do paciente?");
+                System.out.println("\nSelecione a opção desejada:");
+                System.out.println("1 - Sim");
+                System.out.println("2 - Não");
+                System.out.println("3 - Sair");
 
+                Scanner scanner = new Scanner(System.in);
+                try {
+                    opcaoSelecionada = scanner.nextInt();
+                } catch (InputMismatchException e) {
+                    opcaoSelecionada = 0;
+                }
 
+                switch (opcaoSelecionada) {
+                    case 1:
+                        System.out.println("_____________LIMPANDO PACIENTE______________\n");
+                        PacienteRepository.pacientesCadastrados.remove(paciente.getId());
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        System.out.println("Saindo do Sistema...");
+                        System.exit(0);
+                    default:
+                        System.out.println("Opção inválida");
+                }
+
+            } while (opcaoSelecionada != 3);
         }
-
-
     }
 
     public static void apagaCadastro() {
-        System.out.println("_____________LIMPANDO O CADASTRO______________\n");
-        PacienteRepository.pacientesCadastrados.clear();
+        int opcaoSelecionada;
+        do {
+            System.out.println("\nTem certeza que deseja apagar todos os dados de cadastro?");
+            System.out.println("\nSelecione a opção desejada:");
+            System.out.println("1 - Sim");
+            System.out.println("2 - Não");
+            System.out.println("3 - Sair");
+
+            Scanner scanner = new Scanner(System.in);
+            try {
+                opcaoSelecionada = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                opcaoSelecionada = 0;
+            }
+
+            switch (opcaoSelecionada) {
+                case 1:
+                    System.out.println("_____________LIMPANDO O CADASTRO______________\n");
+                    PacienteRepository.pacientesCadastrados.clear();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    System.out.println("Saindo do Sistema...");
+                    System.exit(0);
+                default:
+                    System.out.println("Opção inválida");
+            }
+
+        } while (opcaoSelecionada != 3);
     }
 }
