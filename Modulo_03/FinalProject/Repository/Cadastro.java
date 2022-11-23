@@ -1,17 +1,12 @@
 package Java_B3.Modulo_03.FinalProject.Repository;
 
-import FinalProject.Repository.Endereco;
-import FinalProject.Repository.Paciente;
-import FinalProject.Repository.PacienteRepository;
-import FinalProject.Repository.Search;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
-import static FinalProject.Enums.Convenio.getConvenio;
-import static FinalProject.Enums.Convenio.imprimeConvenio;
-import static FinalProject.Enums.Sexo.getSexo;
+import static Java_B3.Modulo_03.FinalProject.Enums.Convenio.getConvenio;
+import static Java_B3.Modulo_03.FinalProject.Enums.Convenio.imprimeConvenio;
+import static Java_B3.Modulo_03.FinalProject.Enums.Sexo.getSexo;
 
 public class Cadastro {
 

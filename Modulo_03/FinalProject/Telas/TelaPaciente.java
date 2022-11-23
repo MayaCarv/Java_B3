@@ -1,13 +1,12 @@
 package Java_B3.Modulo_03.FinalProject.Telas;
 
-import FinalProject.Repository.*;
-import FinalProject.Repository.Sort;
-import FinalProject.Telas.TelaInicial;
+import Java_B3.Modulo_03.FinalProject.Repository.*;
+import Java_B3.Modulo_03.FinalProject.Repository.Sort;
 
 import java.text.ParseException;
 import java.util.Scanner;
 
-import static FinalProject.Repository.Cadastro.editaPaciente;
+import static Java_B3.Modulo_03.FinalProject.Repository.Cadastro.editaPaciente;
 
 public class TelaPaciente {
     private static final PacienteRepository pacienteRepository = new PacienteRepository();

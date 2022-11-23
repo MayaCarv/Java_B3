@@ -1,8 +1,6 @@
 package Java_B3.Modulo_03.FinalProject.Repository;
 
-import FinalProject.Repository.Paciente;
-import FinalProject.Repository.PacienteRepository;
-import FinalProject.Telas.TelaPaciente;
+import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
 import java.util.Scanner;
 
