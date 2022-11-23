@@ -1,5 +1,6 @@
 package Java_B3.Modulo_03.FinalProject.Telas;
 
+import java.text.ParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -40,7 +41,7 @@ public class TelaConfig {
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("Opção inválida");
+                    System.err.println("Opção inválida");
             }
 
         } while (opcaoSelecionada != 5);

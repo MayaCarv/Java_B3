@@ -2,6 +2,7 @@ package Java_B3.Modulo_03.FinalProject.Repository;
 
 import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
+import java.text.ParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,10 +21,9 @@ public class Search {
             if (paciente.getId() == id) {
                 System.out.println(paciente);
                 return (paciente);
-            } else {
-                System.out.println("Paciente não encontrado!!!");
             }
         }
+        System.out.println("Paciente não encontrado!!!");
         return null;
     }
 
@@ -37,10 +37,9 @@ public class Search {
             if (paciente.getNomeCompleto().equals(nome)) {
                 System.out.println(paciente);
                 return (paciente);
-            } else {
-                System.out.println("Paciente não encontrado!!!");
             }
         }
+        System.out.println("Paciente não encontrado!!!");
         return null;
     }
 
@@ -74,7 +73,7 @@ public class Search {
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("Opção inválida");
+                    System.err.println("Opção inválida");
             }
         } while (opcaoSelecionada != 4);
     }

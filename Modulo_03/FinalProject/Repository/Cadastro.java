@@ -1,7 +1,10 @@
 package Java_B3.Modulo_03.FinalProject.Repository;
 
+import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -11,7 +14,7 @@ import static Java_B3.Modulo_03.FinalProject.Enums.Sexo.getSexo;
 
 public class Cadastro {
 
-    public static void cadastrar(Scanner scanner, PacienteRepository pacienteRepository) throws ParseException {
+    public static void cadastrar(Scanner scanner, PacienteRepository pacienteRepository) {
         System.out.println("\n######## CADASTRO DE PACIENTES ########\n");
         System.out.println("######## Informe seus dados pessoais... ########\n");
 
@@ -67,7 +70,12 @@ public class Cadastro {
         paciente.setNomeCompleto(nomeCompleto);
         paciente.setTelefone(telefone);
         paciente.setSexo(getSexo(sexo));
-        paciente.setDataNascimento(new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento));
+        try {
+            paciente.setDataNascimento(new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento));
+        } catch (ParseException e) {
+            paciente.setDataNascimento(new Date());
+        }
+
         paciente.setConvenio(getConvenio(convenio));
         paciente.setEmail(email);
         paciente.setEndereco(endereco);
@@ -108,15 +116,17 @@ public class Cadastro {
                 switch (opcaoSelecionada) {
                     case 1:
                         System.out.println("_____________LIMPANDO PACIENTE______________\n");
-                        PacienteRepository.pacientesCadastrados.remove(paciente.getId());
+                        PacienteRepository.pacientesCadastrados.remove(paciente.getId() - 1);
+                        TelaPaciente.telaPaciente();
                         break;
                     case 2:
+                        TelaPaciente.telaPaciente();
                         break;
                     case 3:
                         System.out.println("Saindo do Sistema...");
                         System.exit(0);
                     default:
-                        System.out.println("Opção inválida");
+                        System.err.println("Opção inválida");
                 }
 
             } while (opcaoSelecionada != 3);
@@ -143,14 +153,16 @@ public class Cadastro {
                 case 1:
                     System.out.println("_____________LIMPANDO O CADASTRO______________\n");
                     PacienteRepository.pacientesCadastrados.clear();
+                    TelaPaciente.telaPaciente();
                     break;
                 case 2:
+                    TelaPaciente.telaPaciente();
                     break;
                 case 3:
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("Opção inválida");
+                    System.err.println("Opção inválida");
             }
 
         } while (opcaoSelecionada != 3);

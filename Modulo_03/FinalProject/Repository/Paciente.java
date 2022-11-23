@@ -128,7 +128,9 @@ public class Paciente {
                 "\n Nome Completo = " + nameCompleto +
                 "\n Telefone = " + telefone +
                 "\n Sexo = " + sexo +
-                "\n Data de Nascimento = " + new SimpleDateFormat("dd/MM/yyyy").format(dataNascimento) + " (" + getIdade(dataNascimento) + " anos)" +
+                "\n Data de Nascimento = " +
+                new SimpleDateFormat("dd/MM/yyyy").format(dataNascimento) +
+                " (" + getIdade(dataNascimento) + " anos)" +
                 "\n Convênio = " + convenio +
                 "\n Email = " + email +
                 "\n Endereço = " + endereco;

@@ -13,7 +13,7 @@ public class TelaPaciente {
         int opcaoSelecionada;
         do {
             System.out.println("\n*** Controle de Cadastro de Pacientes ***");
-            System.out.println("\nSelecione a op√ß√£o desejada:");
+            System.out.println("\nSelecione a opÁ„o desejada:");
             System.out.println("1 - Cadastrar");
             System.out.println("2 - Ver cadastrados");
             System.out.println("3 - Pesquisar paciente");
@@ -30,11 +30,7 @@ public class TelaPaciente {
             }
             switch (opcaoSelecionada){
                 case 1:
-                    try {
-                        Cadastro.cadastrar(scanner, pacienteRepository);
-                    } catch (ParseException e) {
-                        throw new RuntimeException(e);
-                    }
+                    Cadastro.cadastrar(scanner, pacienteRepository);
                     break;
                 case 2:
                     Sort.sort();
@@ -55,7 +51,7 @@ public class TelaPaciente {
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("Op√ß√£o inv√°lida");
+                    System.err.println("OpÁ„o inv·lida");
             }
 
         } while (opcaoSelecionada != 7);

@@ -2,6 +2,7 @@ package Java_B3.Modulo_03.FinalProject.Repository;
 
 import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
+import java.text.ParseException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.InputMismatchException;
@@ -52,7 +53,7 @@ public class Sort {
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("Opção inválida");
+                    System.err.println("Opção inválida");
             }
         } while (opcaoSelecionada != 4);
     }
