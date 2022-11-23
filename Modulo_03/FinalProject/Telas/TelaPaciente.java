@@ -1,13 +1,12 @@
 package Java_B3.Modulo_03.FinalProject.Telas;
 
-import FinalProject.Repository.*;
-import FinalProject.Repository.Sort;
-import FinalProject.Telas.TelaInicial;
+import Java_B3.Modulo_03.FinalProject.Repository.*;
+import Java_B3.Modulo_03.FinalProject.Repository.Sort;
 
 import java.text.ParseException;
 import java.util.Scanner;
 
-import static FinalProject.Repository.Cadastro.editaPaciente;
+import static Java_B3.Modulo_03.FinalProject.Repository.Cadastro.editaPaciente;
 
 public class TelaPaciente {
     private static final PacienteRepository pacienteRepository = new PacienteRepository();
@@ -15,7 +14,7 @@ public class TelaPaciente {
         int opcaoSelecionada;
         do {
             System.out.println("\n*** Controle de Cadastro de Pacientes ***");
-            System.out.println("\nSelecione a opção desejada:");
+            System.out.println("\nSelecione a opï¿½ï¿½o desejada:");
             System.out.println("1 - Cadastrar");
             System.out.println("2 - Ver cadastrados");
             System.out.println("3 - Pesquisar paciente");
@@ -54,7 +53,7 @@ public class TelaPaciente {
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("Opção inválida");
+                    System.out.println("Opï¿½ï¿½o invï¿½lida");
             }
 
         } while (opcaoSelecionada != 7);

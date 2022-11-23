@@ -1,9 +1,5 @@
 package Java_B3.Modulo_03.FinalProject.Telas;
 
-import FinalProject.Telas.TelaAgenda;
-import FinalProject.Telas.TelaConfig;
-import FinalProject.Telas.TelaPaciente;
-
 import java.util.Scanner;
 
 public class TelaInicial {
