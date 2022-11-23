@@ -1,4 +1,4 @@
-package FinalProject;
+package Java_B3.Modulo_01.FinalProject;
 
 public class Board {
      public static void initBoard(char [][] board) {

@@ -2,7 +2,6 @@ package Java_B3.Modulo_03.FinalProject.Repository;
 
 import Java_B3.Modulo_03.FinalProject.Enums.Convenio;
 import Java_B3.Modulo_03.FinalProject.Enums.Sexo;
-import Java_B3.Modulo_03.FinalProject.Repository.Endereco;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

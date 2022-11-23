@@ -14,7 +14,7 @@ public class TelaPaciente {
         int opcaoSelecionada;
         do {
             System.out.println("\n*** Controle de Cadastro de Pacientes ***");
-            System.out.println("\nSelecione a opÁ„o desejada:");
+            System.out.println("\nSelecione a op√ß√£o desejada:");
             System.out.println("1 - Cadastrar");
             System.out.println("2 - Ver cadastrados");
             System.out.println("3 - Pesquisar paciente");
@@ -53,7 +53,7 @@ public class TelaPaciente {
                     System.out.println("Saindo do Sistema...");
                     System.exit(0);
                 default:
-                    System.out.println("OpÁ„o inv·lida");
+                    System.out.println("Op√ß√£o inv√°lida");
             }
 
         } while (opcaoSelecionada != 7);

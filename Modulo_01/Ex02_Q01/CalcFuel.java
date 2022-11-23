@@ -1,4 +1,4 @@
-package Ex02_Q01;
+package Java_B3.Modulo_01.Ex02_Q01;
 
 import java.util.Scanner;
 

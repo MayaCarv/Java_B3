@@ -1,4 +1,4 @@
-package FinalProject;
+package Java_B3.Modulo_01.FinalProject;
 
 import java.util.Scanner;
 

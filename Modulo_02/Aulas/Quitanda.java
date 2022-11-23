@@ -1,4 +1,4 @@
-package Aulas;
+package Java_B3.Modulo_02.Aulas;
 
 public class Quitanda {
         public static void main(String[] args) {

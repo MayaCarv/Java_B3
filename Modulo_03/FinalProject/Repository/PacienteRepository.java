@@ -1,7 +1,5 @@
 package Java_B3.Modulo_03.FinalProject.Repository;
 
-import Java_B3.Modulo_03.FinalProject.Repository.Paciente;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

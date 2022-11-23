@@ -1,4 +1,4 @@
-package FinalProject.FPGit.myFinal;
+package Java_B3.Modulo_01.FinalProject.FPGit.myFinal;
 
 import java.util.Scanner;
 public class HashGame {

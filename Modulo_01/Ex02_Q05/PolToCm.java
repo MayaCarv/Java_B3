@@ -1,4 +1,4 @@
-package Ex02_Q05;
+package Java_B3.Modulo_01.Ex02_Q05;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
