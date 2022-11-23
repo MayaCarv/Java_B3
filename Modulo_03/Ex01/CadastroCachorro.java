@@ -1,21 +1,23 @@
-package Ex01;
+package Java_B3.Modulo_03.Ex01;
+
+import Ex01.Cachorro;
 
 import java.util.Objects;
 
 public class CadastroCachorro {
-    Cachorro[] listaCachorros = new Cachorro[1];
+    Ex01.Cachorro[] listaCachorros = new Ex01.Cachorro[1];
 
-    public void listar(Cachorro cachorro) {
-        if (Cachorro.getContador() == 1) {
+    public void listar(Ex01.Cachorro cachorro) {
+        if (Ex01.Cachorro.getContador() == 1) {
             listaCachorros[0] = cachorro;
         }
         else {
-            Cachorro[] listaCachorrosTemp = new Cachorro[Cachorro.getContador()];
+            Ex01.Cachorro[] listaCachorrosTemp = new Ex01.Cachorro[Ex01.Cachorro.getContador()];
             for(int i = 0; i < listaCachorros.length; i++) {
                 listaCachorrosTemp[i] = listaCachorros[i];
             }
-            listaCachorrosTemp[Cachorro.getContador() - 1] = cachorro;
-            listaCachorros = new Cachorro[Cachorro.getContador()];
+            listaCachorrosTemp[Ex01.Cachorro.getContador() - 1] = cachorro;
+            listaCachorros = new Ex01.Cachorro[Ex01.Cachorro.getContador()];
             for (int i = 0; i < listaCachorros.length; i++) {
                 listaCachorros[i] = listaCachorrosTemp[i];
             }

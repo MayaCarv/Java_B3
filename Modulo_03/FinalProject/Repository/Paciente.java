@@ -1,7 +1,8 @@
-package FinalProject.Repository;
+package Java_B3.Modulo_03.FinalProject.Repository;
 
 import FinalProject.Enums.Convenio;
 import FinalProject.Enums.Sexo;
+import FinalProject.Repository.Endereco;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,12 +17,12 @@ public class Paciente {
     private Date dataNascimento;
     private Convenio convenio;
     private String email;
-    private Endereco endereco;
+    private FinalProject.Repository.Endereco endereco;
 
     public Paciente() {
 
     }
-    public Paciente(String nameCompleto, String telefone, Sexo sexo, Date dataNascimento, Convenio convenio, String email, Endereco endereco) {
+    public Paciente(String nameCompleto, String telefone, Sexo sexo, Date dataNascimento, Convenio convenio, String email, FinalProject.Repository.Endereco endereco) {
         this.nameCompleto = nameCompleto;
         this.telefone = telefone;
         this.sexo = sexo;
@@ -92,7 +93,7 @@ public class Paciente {
         this.email = email;
     }
 
-    public Endereco getEndereco() {
+    public FinalProject.Repository.Endereco getEndereco() {
         return endereco;
     }
 

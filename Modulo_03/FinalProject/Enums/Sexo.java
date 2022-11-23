@@ -1,4 +1,4 @@
-package FinalProject.Enums;
+package Java_B3.Modulo_03.FinalProject.Enums;
 
 public enum Sexo {
     FEMININO('F'),

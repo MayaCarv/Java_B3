@@ -1,4 +1,6 @@
-package Ex01;
+package Java_B3.Modulo_03.Ex01;
+
+import Ex01.Endereco;
 
 public class Dono {
 

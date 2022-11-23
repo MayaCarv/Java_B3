@@ -1,4 +1,9 @@
-package FinalProject.Repository;
+package Java_B3.Modulo_03.FinalProject.Repository;
+
+import FinalProject.Repository.Endereco;
+import FinalProject.Repository.Paciente;
+import FinalProject.Repository.PacienteRepository;
+import FinalProject.Repository.Search;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

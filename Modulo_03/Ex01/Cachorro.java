@@ -1,4 +1,6 @@
-package Ex01;
+package Java_B3.Modulo_03.Ex01;
+
+import Ex01.Dono;
 
 public class Cachorro {
 
@@ -8,7 +10,7 @@ public class Cachorro {
     private int idade;
     private boolean estaDoente;
 
-    private Dono dono;
+    private Ex01.Dono dono;
 
 
     private static int contador;
@@ -77,7 +79,7 @@ public class Cachorro {
         return idade;
     }
 
-    public Dono getDono() {
+    public Ex01.Dono getDono() {
 
         return dono;
     }

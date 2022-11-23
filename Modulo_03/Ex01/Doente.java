@@ -1,4 +1,4 @@
-package Ex01;
+package Java_B3.Modulo_03.Ex01;
 
 public enum Doente {
     DOENTE (true),

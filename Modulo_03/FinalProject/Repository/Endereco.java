@@ -1,4 +1,4 @@
-package FinalProject.Repository;
+package Java_B3.Modulo_03.FinalProject.Repository;
 
 public class Endereco {
 
