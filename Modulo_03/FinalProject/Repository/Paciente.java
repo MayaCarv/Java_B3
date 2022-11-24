@@ -13,7 +13,7 @@ public class Paciente {
     private String nameCompleto;
     private String telefone;
     private Sexo sexo;
-    private Date dataNascimento;
+    private static Date dataNascimento;
     private Convenio convenio;
     private String email;
     private Endereco endereco;
@@ -95,10 +95,10 @@ public class Paciente {
         this.endereco = endereco;
     }
 
-    public int getIdade(Date dataNascimento)
+    public int getIdade()
     {
         Calendar data = new GregorianCalendar();
-        data.setTime(dataNascimento);
+        data.setTime(Paciente.dataNascimento);
 
         Calendar hoje = Calendar.getInstance();
 
@@ -125,7 +125,7 @@ public class Paciente {
                 "\n Sexo = " + sexo +
                 "\n Data de Nascimento = " +
                 new SimpleDateFormat("dd/MM/yyyy").format(dataNascimento) +
-                " (" + getIdade(dataNascimento) + " anos)" +
+                " (" + getIdade() + " anos)" +
                 "\n Convênio = " + convenio +
                 "\n Email = " + email +
                 "\n Endereço = " + endereco;
