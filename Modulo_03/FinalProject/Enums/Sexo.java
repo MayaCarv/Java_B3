@@ -3,7 +3,7 @@ package Java_B3.Modulo_03.FinalProject.Enums;
 public enum Sexo {
     FEMININO('F'),
     MASCULINO('M'),
-    SEM_ESPECIFICA«√O (' ');
+    SEM_DEFINI√á√ÉO (' ');
 
     private final char sexo;
 
@@ -17,7 +17,7 @@ public enum Sexo {
                 return tipoSexo;
             }
         }
-    return SEM_ESPECIFICA«√O;
+    return SEM_DEFINI√á√ÉO;
     }
 }
 
