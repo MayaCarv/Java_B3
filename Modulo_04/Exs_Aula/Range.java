@@ -1,4 +1,4 @@
-package Java_B3.Modulo_04.Exs_Aula.Cronometro;
+package Java_B3.Modulo_04.Exs_Aula;
 
 import java.time.Duration;
 import java.time.LocalTime;
