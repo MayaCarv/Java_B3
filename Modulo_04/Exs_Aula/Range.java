@@ -27,7 +27,7 @@ public class Range {
             LocalTime horaEntrada2 = LocalTime.parse(horaSeparada[3], formatter);
             LocalTime horaSaida2 = LocalTime.parse(horaSeparada[4], formatter);
 
-            long periodo1 = Duration.between(horaEntrada1, horaSaida1).toMinutes() - 240 ;
+            long periodo1 = Duration.between(horaEntrada1, horaSaida1).toMinutes() - 240;
             long periodo2 = Duration.between(horaEntrada2, horaSaida2).toMinutes() - 240;
 
             if (horaEntrada1.isAfter(LocalTime.parse("08:05")))
