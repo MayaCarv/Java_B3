@@ -1,5 +1,8 @@
-package Java_B3.Modulo_03.FinalProject.Repository;
+package Java_B3.Modulo_03.FinalProject.Filing;
 
+import Java_B3.Modulo_03.FinalProject.Repository.Cadastro;
+import Java_B3.Modulo_03.FinalProject.Repository.Paciente;
+import Java_B3.Modulo_03.FinalProject.Repository.PacienteRepository;
 import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
 import java.util.Collections;

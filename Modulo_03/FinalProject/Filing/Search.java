@@ -1,5 +1,7 @@
-package Java_B3.Modulo_03.FinalProject.Repository;
+package Java_B3.Modulo_03.FinalProject.Filing;
 
+import Java_B3.Modulo_03.FinalProject.Repository.Paciente;
+import Java_B3.Modulo_03.FinalProject.Repository.PacienteRepository;
 import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
 import java.util.InputMismatchException;
@@ -22,11 +24,11 @@ public class Search {
                 return (paciente);
             }
         }
-        System.out.println("Paciente não encontrado!!!");
+        System.err.println("Paciente não encontrado!!!");
         return null;
     }
 
-    private static Paciente searchNome() {
+    private static void searchNome() {
         System.out.println("\nDigite o nome completo do paciente desejado: ");
 
         Scanner scanner = new Scanner(System.in);
@@ -35,11 +37,10 @@ public class Search {
         for (Paciente paciente : PacienteRepository.pacientesCadastrados) {
             if (paciente.getNomeCompleto().equals(nome)) {
                 System.out.println(paciente);
-                return (paciente);
+                return;
             }
         }
-        System.out.println("Paciente não encontrado!!!");
-        return null;
+        System.err.println("Paciente não encontrado!!!");
     }
 
     public static void pesquisar() {
@@ -74,6 +75,6 @@ public class Search {
                 default:
                     System.err.println("Opção inválida");
             }
-        } while (opcaoSelecionada != 4);
+        } while (true);
     }
 }
