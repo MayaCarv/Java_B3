@@ -27,8 +27,8 @@ public class Range {
             LocalTime horaEntrada2 = LocalTime.parse(horaSeparada[3], formatter);
             LocalTime horaSaida2 = LocalTime.parse(horaSeparada[4], formatter);
 
-            long periodo1 = Duration.between(horaEntrada1, horaSaida1).toMinutes() - 240;
-            long periodo2 = Duration.between(horaEntrada2, horaSaida2).toMinutes() - 240;
+            long period1 = Duration.between(horaEntrada1, horaSaida1).toMinutes() - 240;
+            long period2 = Duration.between(horaEntrada2, horaSaida2).toMinutes() - 240;
 
             if (horaEntrada1.isAfter(LocalTime.parse("08:05")))
                 System.out.println("Abusou");
@@ -38,7 +38,7 @@ public class Range {
                 System.out.println("Abusou");
             else if (horaSaida2.isBefore(LocalTime.parse("17:55")))
                 System.out.println("Abusou");
-            else if (periodo1 + periodo2 < 0)
+            else if (period1 + period2 < 0)
                 System.out.println("Abusou");
             else
                 System.out.println("Não Abusou");

@@ -1,4 +1,4 @@
-package Java_B3.Modulo_03.FinalProject.Enums;
+package Java_B3.Modulo_04.FinalProject.Enums;
 
 public enum Especialidade {
     REUMATOLOGISTA,
