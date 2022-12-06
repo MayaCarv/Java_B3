@@ -2,7 +2,6 @@ package Java_B3.Modulo_03.FinalProject.Repository;
 
 import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
-import java.text.ParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

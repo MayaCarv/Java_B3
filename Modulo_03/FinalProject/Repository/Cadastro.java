@@ -4,7 +4,7 @@ import Java_B3.Modulo_03.FinalProject.Telas.TelaPaciente;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Date; // mudar java.time
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -1,6 +1,7 @@
 package Java_B3.Modulo_04.Exs_Aula;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -14,7 +15,9 @@ class Jogo {
 
     private int golsTime2;
 
-    public Jogo(String time1, String time2, LocalDateTime data_hora, int golsTime1, int golsTime2) {
+    public Jogo(String time1, String time2,
+                LocalDateTime data_hora,
+                int golsTime1, int golsTime2) {
         this.time1 = time1;
         this.time2 = time2;
         this.data_hora = data_hora;
@@ -67,33 +70,34 @@ class Jogo {
         return getGolsTime1() + getGolsTime2();
     }
 
+    DateTimeFormatter formatter =
+            DateTimeFormatter.ofPattern("dd/MM/yyyy");
     @Override
     public String toString() {
-        return "\nData: " + data_hora +
+        return "\nData: " + data_hora.format(formatter) +
                 "\n" + time1 + " " + golsTime1 +
                 ":" + golsTime2 + " " + time2;
     }
 }
-
 class MinGols {
     public static void min(List<Jogo> listaJogos) {
         Stream<Jogo> streamJogos = listaJogos.stream();
-        var value = streamJogos.min(Comparator.comparingInt(Jogo::getTotalGols));
-        if (value.isPresent()) {
-            System.out.println("Jogo com o menor número de gols:" +
-                    value.get() + "\n");
-        }
+        var value = streamJogos.min(
+                Comparator.comparingInt(Jogo::getTotalGols));
+        value.ifPresent(jogo -> System.out.printf(
+                        "\nJogo com o menor número" +
+                        "de gols: %s\n", jogo));
 
     }
 }
 class MaxGols {
     public static void max(List<Jogo> listaJogos) {
         Stream<Jogo> streamJogos = listaJogos.stream();
-        var value = streamJogos.max(Comparator.comparingInt(Jogo::getTotalGols));
-        if (value.isPresent()) {
-            System.out.println("Jogo com o maior número de gols:" +
-                    value.get() + "\n");
-        }
+        var value = streamJogos.max(
+                Comparator.comparingInt(Jogo::getTotalGols));
+        value.ifPresent(jogo -> System.out.println(
+                "\nJogo com o maior número de gols:" +
+                        jogo + "\n"));
     }
 
 }
@@ -101,20 +105,24 @@ class MaxGols {
 class TotalGols {
     public static void total(List<Jogo> listaJogos) {
         Stream<Jogo> streamJogos = listaJogos.stream();
-        System.out.println("Total de gols marcados: " +
-                streamJogos.map(Jogo::getTotalGols).reduce(0, Integer::sum));
+        System.out.println("Total de gols marcados" +
+                "\nem todos os jogos: " +
+                streamJogos.map(Jogo::getTotalGols)
+                        .reduce(0, Integer::sum));
     }
 }
-
-
 
 public class Placar {
     public static void main(String[] args) {
         var data = LocalDateTime.of(2022, 12, 2, 0, 0, 0);
-        Jogo jogo1 = new Jogo("Coreia do Sul", "Portugal", data, 2, 1);
-        Jogo jogo2 = new Jogo("Gana", "Uruguai", data, 0, 2);
-        Jogo jogo3 = new Jogo("Sérvia", "Suíça", data, 2, 3);
-        Jogo jogo4 = new Jogo("Camarões", "Brasil", data, 1, 0);
+        Jogo jogo1 = new Jogo("Coreia do Sul",
+                "Portugal", data, 2, 1);
+        Jogo jogo2 = new Jogo("Gana",
+                "Uruguai", data, 0, 2);
+        Jogo jogo3 = new Jogo("Sérvia",
+                "Suíça", data, 2, 3);
+        Jogo jogo4 = new Jogo("Camarões",
+                "Brasil", data, 1, 0);
         List<Jogo> listaJogos = new ArrayList<>();
         listaJogos.add(jogo1);
         listaJogos.add(jogo2);
