@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class TelaConfig {
 
     public static void telaConfig() {
-        int opcaoSelecionada;
+        int option;
         do {
             System.out.println("\n*** Controle de Configurações ***");
             System.out.println("Selecione a opção desejada:");
@@ -18,20 +18,20 @@ public class TelaConfig {
 
             Scanner scanner = new Scanner(System.in);
             try {
-                opcaoSelecionada = scanner.nextInt();
+                option = scanner.nextInt();
             } catch (InputMismatchException e) {
-                opcaoSelecionada = 0;
+                option = 0;
             }
 
-            switch (opcaoSelecionada){
+            switch (option){
                 case 1:
-                    //configHorario();
+                    //configTime();
                     break;
                 case 2:
-                    //configDias();
+                    //configDays();
                     break;
                 case 3:
-                    //configDuracao();;
+                    //configDuration();;
                     break;
                 case 4:
                     TelaInicial.welcome();

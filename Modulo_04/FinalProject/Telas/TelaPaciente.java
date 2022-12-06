@@ -1,9 +1,7 @@
 package Java_B3.Modulo_04.FinalProject.Telas;
 
-import Java_B3.Modulo_04.FinalProject.Filing.Search;
-import Java_B3.Modulo_04.FinalProject.Filing.Sort;
-import Java_B3.Modulo_04.FinalProject.Repository.Cadastro;
-import Java_B3.Modulo_04.FinalProject.Repository.PacienteRepository;
+import Java_B3.Modulo_04.FinalProject.Filing.*;
+import Java_B3.Modulo_04.FinalProject.Repository.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -11,7 +9,7 @@ import java.util.Scanner;
 public class TelaPaciente {
     private static final PacienteRepository pacienteRepository = new PacienteRepository();
     public static void telaPaciente() {
-        int opcaoSelecionada;
+        int options;
         do {
             System.out.println("\n*** Controle de Cadastro de Pacientes ***");
             System.out.println("\nSelecione a opção desejada:");
@@ -25,11 +23,11 @@ public class TelaPaciente {
 
             Scanner scanner = new Scanner(System.in);
             try {
-                opcaoSelecionada = scanner.nextInt();
+                options = scanner.nextInt();
             } catch (InputMismatchException e) {
-                opcaoSelecionada = 0;
+                options = 0;
             }
-            switch (opcaoSelecionada){
+            switch (options){
                 case 1:
                     Cadastro.cadastrar(scanner, pacienteRepository);
                     break;

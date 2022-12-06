@@ -10,7 +10,7 @@ public class PacienteRepository {
     public void cadastro(Paciente paciente)
     {
         setId(paciente);
-        if (Objects.nonNull(paciente) && Objects.nonNull(paciente.getEndereco())) {
+        if (Objects.nonNull(paciente.getAddress())) {
             pacientesCadastrados.add(paciente);
         } else {
             System.err.println("Paciente nulo ou sem Endereço!");
@@ -18,7 +18,7 @@ public class PacienteRepository {
     }
     private void setId(Paciente paciente) {
         paciente.setId(sequencia);
-        paciente.getEndereco().setId(sequencia);
+        paciente.getAddress().setId(sequencia);
         sequencia++;
     }
 }

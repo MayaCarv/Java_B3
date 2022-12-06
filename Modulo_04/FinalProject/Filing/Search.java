@@ -44,7 +44,7 @@ public class Search {
     }
 
     public static void pesquisar() {
-        int opcaoSelecionada;
+        int option;
         do {
             System.out.println("\nSelecione o tipo de pesquisa desejada:");
             System.out.println("1 - por ID");
@@ -54,12 +54,12 @@ public class Search {
 
             Scanner scanner = new Scanner(System.in);
             try {
-                opcaoSelecionada = scanner.nextInt();
+                option = scanner.nextInt();
             } catch (InputMismatchException e) {
-                opcaoSelecionada = 0;
+                option = 0;
             }
 
-            switch (opcaoSelecionada){
+            switch (option){
                 case 1:
                     searchID();
                     break;

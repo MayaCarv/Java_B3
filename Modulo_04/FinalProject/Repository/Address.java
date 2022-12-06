@@ -1,6 +1,6 @@
 package Java_B3.Modulo_04.FinalProject.Repository;
 
-public class Endereco {
+public class Address {
 
     int id;
     private String rua;
@@ -10,7 +10,7 @@ public class Endereco {
     private String cidade;
     private String estado;
 
-    public Endereco() {
+    public Address() {
 
     }
 
@@ -18,7 +18,7 @@ public class Endereco {
         return rua;
     }
 
-    public Endereco(String rua, String numero, String cep, String bairro,String cidade, String estado) {
+    public Address(String rua, String numero, String cep, String bairro, String cidade, String estado) {
         this.rua = rua;
         this.numero = numero;
         this.cep = cep;

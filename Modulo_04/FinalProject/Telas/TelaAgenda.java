@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class TelaAgenda {
     public static void telaAgenda() {
-        int opcaoSelecionada;
+        int option;
         do {
             System.out.println("\n*** Controle de Agendamento ***");
             System.out.println("Selecione a opção desejada:");
@@ -18,12 +18,12 @@ public class TelaAgenda {
 
             Scanner scanner = new Scanner(System.in);
             try {
-                opcaoSelecionada = scanner.nextInt();
+                option = scanner.nextInt();
             } catch (InputMismatchException e) {
-                opcaoSelecionada = 0;
+                option = 0;
             }
 
-            switch (opcaoSelecionada){
+            switch (option){
                 case 1:
                     //marcarConsulta();
                     break;

@@ -3,14 +3,13 @@ package Java_B3.Modulo_04.FinalProject.Repository;
 import Java_B3.Modulo_04.FinalProject.Filing.Overload;
 import Java_B3.Modulo_04.FinalProject.Filing.Search;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import static Java_B3.Modulo_03.FinalProject.Enums.Convenio.getConvenio;
-import static Java_B3.Modulo_03.FinalProject.Enums.Convenio.imprimeConvenio;
-import static Java_B3.Modulo_03.FinalProject.Enums.Sexo.getSexo;
+import static Java_B3.Modulo_04.FinalProject.Enums.Convenio.getConvenio;
+import static Java_B3.Modulo_04.FinalProject.Enums.Convenio.imprimeConvenio;
+import static Java_B3.Modulo_04.FinalProject.Enums.Sexo.getSexo;
 
 public class Cadastro {
 
@@ -58,32 +57,27 @@ public class Cadastro {
         System.out.println("Digite o estado:");
         String estado = scanner.nextLine();
 
-        Endereco endereco = new Endereco();
-        endereco.setRua(rua);
-        endereco.setNumero(numero);
-        endereco.setCep(cep);
-        endereco.setBairro(bairro);
-        endereco.setCidade(cidade);
-        endereco.setEstado(estado);
+        Address address = new Address();
+        address.setRua(rua);
+        address.setNumero(numero);
+        address.setCep(cep);
+        address.setBairro(bairro);
+        address.setCidade(cidade);
+        address.setEstado(estado);
 
         Paciente paciente = new Paciente();
         paciente.setNomeCompleto(nomeCompleto);
         paciente.setTelefone(telefone);
         paciente.setSexo(getSexo(sexo));
-        try {
-            paciente.setDataNascimento(new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento));
-        } catch (ParseException e) {
-            paciente.setDataNascimento(new Date());
-        }
-
+        System.out.println(dataNascimento + "\n");
+        paciente.setDataNascimento(LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         paciente.setConvenio(getConvenio(convenio));
         paciente.setEmail(email);
-        paciente.setEndereco(endereco);
+        paciente.setAddress(address);
 
         pacienteRepository.cadastro(paciente);
         System.out.println("CADASTRO FINALIZADO COM SUCESSO!! ACESSE A OPÇÃO 2 PARA VER CADASTROS\n");
     }
-
     public static void imprimePacientesCadastrados() {
         System.out.println("_____________PACIENTES CADASTRADOS:_____________");
         for (Paciente paciente : PacienteRepository.pacientesCadastrados) {
@@ -102,14 +96,11 @@ public class Cadastro {
             } while (true);
         }
     }
-
     public static void apagaCadastro() {
         do {
             System.out.println("\nTem certeza que deseja apagar todos os dados de cadastro?");
             Overload.choice();
         } while (true);
     }
-
-
 }
 

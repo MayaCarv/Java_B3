@@ -5,7 +5,6 @@ import Java_B3.Modulo_04.FinalProject.Repository.Paciente;
 import Java_B3.Modulo_04.FinalProject.Repository.PacienteRepository;
 import Java_B3.Modulo_04.FinalProject.Telas.TelaPaciente;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -24,7 +23,7 @@ public class Sort {
         }
     }
     public static void sort() {
-        int opcaoSelecionada;
+        int option;
         do {
             System.out.println("\nSelecione o tipo de ordenação desejada:");
             System.out.println("1 - por ID");
@@ -34,18 +33,18 @@ public class Sort {
 
             Scanner scanner = new Scanner(System.in);
             try {
-                opcaoSelecionada = scanner.nextInt();
+                option = scanner.nextInt();
             } catch (InputMismatchException e) {
-                opcaoSelecionada = 0;
+                option = 0;
             }
 
-            switch (opcaoSelecionada){
+            switch (option){
                 case 1:
-                    Collections.sort(PacienteRepository.pacientesCadastrados, new SortById());
+                    PacienteRepository.pacientesCadastrados.sort(new SortById());
                     Cadastro.imprimePacientesCadastrados();
                     break;
                 case 2:
-                    Collections.sort(PacienteRepository.pacientesCadastrados, new SortByName());
+                    PacienteRepository.pacientesCadastrados.sort(new SortByName());
                     Cadastro.imprimePacientesCadastrados();
                     break;
                 case 3:
@@ -57,6 +56,6 @@ public class Sort {
                 default:
                     System.err.println("Opção inválida");
             }
-        } while (opcaoSelecionada != 4);
+        } while (true);
     }
 }

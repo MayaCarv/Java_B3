@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class Overload {
     public static void choice ( Paciente paciente) {
-        int opcaoSelecionada = getOpcaoSelecionada();
-        switch (opcaoSelecionada) {
+        int option = getOption();
+        switch (option) {
             case 1:
                 System.out.println("_____________LIMPANDO PACIENTE______________\n");
                 PacienteRepository.pacientesCadastrados.remove(paciente.getId() - 1);
@@ -27,8 +27,8 @@ public class Overload {
         }
     }
     public static void choice () {
-        int opcaoSelecionada = getOpcaoSelecionada();
-        switch (opcaoSelecionada) {
+        int option = getOption();
+        switch (option) {
             case 1:
                 System.out.println("_____________LIMPANDO O CADASTRO______________\n");
                 PacienteRepository.pacientesCadastrados.clear();
@@ -44,8 +44,8 @@ public class Overload {
                 System.err.println("Opção inválida");
         }
     }
-    private static int getOpcaoSelecionada() {
-        int opcaoSelecionada;
+    private static int getOption() {
+        int option;
         System.out.println("\nSelecione a opção desejada:");
         System.out.println("1 - Sim");
         System.out.println("2 - Não");
@@ -53,10 +53,10 @@ public class Overload {
 
         Scanner scanner = new Scanner(System.in);
         try {
-            opcaoSelecionada = scanner.nextInt();
+            option = scanner.nextInt();
         } catch (InputMismatchException e) {
-            opcaoSelecionada = 0;
+            option = 0;
         }
-        return opcaoSelecionada;
+        return option;
     }
 }
