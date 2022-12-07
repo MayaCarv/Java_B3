@@ -85,7 +85,7 @@ class MinGols {
         var value = streamJogos.min(
                 Comparator.comparingInt(Jogo::getTotalGols));
         value.ifPresent(jogo -> System.out.printf(
-                        "\nJogo com o menor nÃºmero" +
+                        "\nJogo com o menor número" +
                         "de gols: %s\n", jogo));
 
     }
@@ -96,7 +96,7 @@ class MaxGols {
         var value = streamJogos.max(
                 Comparator.comparingInt(Jogo::getTotalGols));
         value.ifPresent(jogo -> System.out.println(
-                "\nJogo com o maior nÃºmero de gols:" +
+                "\nJogo com o maior número de gols:" +
                         jogo + "\n"));
     }
 
@@ -119,9 +119,9 @@ public class Placar {
                 "Portugal", data, 2, 1);
         Jogo jogo2 = new Jogo("Gana",
                 "Uruguai", data, 0, 2);
-        Jogo jogo3 = new Jogo("SÃ©rvia",
-                "SuÃ­Ã§a", data, 2, 3);
-        Jogo jogo4 = new Jogo("CamarÃµes",
+        Jogo jogo3 = new Jogo("Sérvia",
+                "Suíça", data, 2, 3);
+        Jogo jogo4 = new Jogo("Camarões",
                 "Brasil", data, 1, 0);
         List<Jogo> listaJogos = new ArrayList<>();
         listaJogos.add(jogo1);
