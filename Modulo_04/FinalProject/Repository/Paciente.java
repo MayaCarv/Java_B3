@@ -3,9 +3,9 @@ package Java_B3.Modulo_04.FinalProject.Repository;
 import Java_B3.Modulo_04.FinalProject.Enums.Convenio;
 import Java_B3.Modulo_04.FinalProject.Enums.Sexo;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class Paciente {
     private int id;
@@ -113,7 +113,7 @@ public class Paciente {
                 "\n Telefone = " + telefone +
                 "\n Sexo = " + sexo +
                 "\n Data de Nascimento = " +
-                new SimpleDateFormat("dd/MM/yyyy").format(dataNascimento) +
+                dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
                 " (" + getIdade() + " anos)" +
                 "\n Convênio = " + convenio +
                 "\n Email = " + email +
