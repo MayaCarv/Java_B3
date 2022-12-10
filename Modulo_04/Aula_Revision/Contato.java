@@ -1,4 +1,4 @@
-package Java_B3.Modulo_04.Aula_revisão;
+package Java_B3.Modulo_04.Aula_Revision;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -61,4 +61,11 @@ public class Contato {
         return idade;
     }
 
+    @Override
+    public String toString() {
+        return "\n Id = " + id +
+                "\n Nome = " + nome +
+                "\n Telefone = " + telefone +
+                "\n Data = " + dataNascimento;
+    }
 }
