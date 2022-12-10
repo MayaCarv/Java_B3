@@ -9,9 +9,6 @@ public class Main {
     public static void main(String[] args) {
         List<Contato> listaContatos = new ArrayList<>();
 
-//
-//    Ordene por nome
-
         Contato contato1 = new Contato(1, "Maria", "(00) 55555-5555", LocalDate.parse("2000-12-30"));
         Contato contato2 = new Contato(2, "João", "(00) 55555-5555", LocalDate.parse("1964-12-03"));
         Contato contato3 = new Contato(3, "José", "(00) 55555-5555", LocalDate.parse("1988-06-30"));
