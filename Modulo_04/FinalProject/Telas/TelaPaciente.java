@@ -38,10 +38,11 @@ public class TelaPaciente {
                     Search.pesquisar();
                     break;
                 case 4:
-                    Cadastro.apagaPaciente();
+                    Paciente paciente = Search.searchID();
+                    Overload.apagaCadastro(paciente);
                     break;
                 case 5:
-                    Cadastro.apagaCadastro();
+                    Overload.apagaCadastro();
                     break;
                 case 6:
                     TelaInicial.welcome();

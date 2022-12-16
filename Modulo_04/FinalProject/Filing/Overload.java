@@ -8,7 +8,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Overload {
-    public static void choice ( Paciente paciente) {
+
+    public static void apagaCadastro(Paciente paciente) {
+        if (paciente != null) {
+            do {
+                System.out.println("\nTem certeza que deseja apagar os dados do paciente?");
+                Overload.choice(paciente);
+            } while (true);
+        }
+    }
+    public static void apagaCadastro() {
+        do {
+            System.out.println("\nTem certeza que deseja apagar todos os dados de cadastro?");
+            Overload.choice();
+        } while (true);
+    }
+
+    public static void choice (Paciente paciente) {
         int option = getOption();
         switch (option) {
             case 1:

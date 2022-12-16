@@ -1,8 +1,5 @@
 package Java_B3.Modulo_04.FinalProject.Repository;
 
-import Java_B3.Modulo_04.FinalProject.Filing.Overload;
-import Java_B3.Modulo_04.FinalProject.Filing.Search;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -86,21 +83,6 @@ public class Cadastro {
         if (PacienteRepository.pacientesCadastrados.isEmpty()) {
             System.out.println("_____________NENHUM PACIENTE CADASTRADO_____________\n");
         }
-    }
-    public static void apagaPaciente() {
-        Paciente paciente = Search.searchID();
-        if (paciente != null) {
-            do {
-                System.out.println("\nTem certeza que deseja apagar os dados do paciente?");
-                Overload.choice(paciente);
-            } while (true);
-        }
-    }
-    public static void apagaCadastro() {
-        do {
-            System.out.println("\nTem certeza que deseja apagar todos os dados de cadastro?");
-            Overload.choice();
-        } while (true);
     }
 }
 

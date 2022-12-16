@@ -1,6 +1,5 @@
 package Java_B3.Modulo_04.FinalProject.Filing;
 
-import Java_B3.Modulo_04.FinalProject.Repository.Cadastro;
 import Java_B3.Modulo_04.FinalProject.Repository.Paciente;
 import Java_B3.Modulo_04.FinalProject.Repository.PacienteRepository;
 import Java_B3.Modulo_04.FinalProject.Telas.TelaPaciente;
@@ -10,18 +9,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Sort {
-    private static class SortById implements Comparator<Paciente> {
-        @Override
-        public int compare(Paciente a, Paciente b) {
-            return a.getId() - b.getId();
-        }
-    }
-    private static class SortByName implements Comparator<Paciente> {
-        @Override
-        public int compare(Paciente a, Paciente b) {
-            return a.getNomeCompleto().compareTo(b.getNomeCompleto());
-        }
-    }
     public static void sort() {
         int option;
         do {
@@ -40,12 +27,14 @@ public class Sort {
 
             switch (option){
                 case 1:
-                    PacienteRepository.pacientesCadastrados.sort(new SortById());
-                    Cadastro.imprimePacientesCadastrados();
+                    PacienteRepository.pacientesCadastrados.stream().
+                            sorted(Comparator.comparingInt(Paciente::getId)).
+                            forEach(System.out::println);
                     break;
                 case 2:
-                    PacienteRepository.pacientesCadastrados.sort(new SortByName());
-                    Cadastro.imprimePacientesCadastrados();
+                    PacienteRepository.pacientesCadastrados.stream().
+                            sorted(Comparator.comparing(Paciente::getNomeCompleto)).
+                            forEach(System.out::println);
                     break;
                 case 3:
                     TelaPaciente.telaPaciente();

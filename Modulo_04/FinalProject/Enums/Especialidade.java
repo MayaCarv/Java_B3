@@ -1,5 +1,7 @@
 package Java_B3.Modulo_04.FinalProject.Enums;
 
+import java.util.Arrays;
+
 public enum Especialidade {
     REUMATOLOGISTA,
     ENDOCRINOLOGISTA,
@@ -14,8 +16,6 @@ public enum Especialidade {
         return CLINICA_MEDICA;
     }
     public static void imprimeEspecialidade() {
-        for (Especialidade nomeEspecialidade : Especialidade.values()) {
-            System.out.println(nomeEspecialidade.name());
-        }
+        Arrays.asList(Especialidade.values()).forEach(System.out::println);
     }
 }

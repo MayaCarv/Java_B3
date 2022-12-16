@@ -1,5 +1,7 @@
 package Java_B3.Modulo_04.FinalProject.Enums;
 
+import java.util.Arrays;
+
 public enum Convenio {
     UNIMED,
     BRADESCO,
@@ -17,8 +19,6 @@ public enum Convenio {
     }
 
     public static void imprimeConvenio() {
-        for (Convenio nomeConvenio : Convenio.values()) {
-            System.out.println(nomeConvenio.name());
-        }
+        Arrays.asList(Convenio.values()).forEach(System.out::println);
     }
 }
