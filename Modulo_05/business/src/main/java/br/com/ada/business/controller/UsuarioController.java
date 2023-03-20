@@ -20,11 +20,11 @@ public class UsuarioController {
     @PostMapping
     public Usuario salvar(@RequestBody UsuarioRequestDTO usuario) {
         Usuario usuarioSalvo = null;
-        try {
+//        try {
             usuarioSalvo = usuarioService.salvar(usuario);
-        } catch (IllegalArgumentException | ParseException exception) {
-            System.out.println("CFP já existe");
-        }
+//        } catch (IllegalArgumentException | ParseException exception) {
+//            System.out.println("CFP já existe");
+//        }
         return usuarioSalvo;
     }
 
