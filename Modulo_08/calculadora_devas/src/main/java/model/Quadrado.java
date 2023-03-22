@@ -10,4 +10,10 @@ public class Quadrado {
     public void setLado(double lado) {
         this.lado = lado;
     }
+
+    @Override
+    public String toString() {
+        return "Quadrado de tamanho: " +
+                lado + "x" + lado + "cm";
+    }
 }

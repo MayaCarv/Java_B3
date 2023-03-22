@@ -19,13 +19,32 @@ public class CalculadoraService {
         return a*b;
     }
 
-//    public ??? calcularArea() {
-//    }
+    public double calcularArea(Triangulo triangulo) {
+        return ((triangulo.getAltura() * triangulo.getBase()) / 2);
+    }
 
-    // Caso seja de area igual, retorna null
-//    public Triangulo trianguloDeMenorArea(Triangulo triangulo1, Triangulo triangulo2) {
-//    }
-//    public Quadrado quadradoDeMenorArea(Quadrado quadrado1, Quadrado quadrado2) {
-//    }
+    public double calcularArea(Quadrado quadrado) {
+        return (quadrado.getLado() * quadrado.getLado());
 
+    }
+
+    public Triangulo trianguloDeMenorArea(Triangulo a, Triangulo b) {
+        double aArea = calcularArea(a);
+        double bArea = calcularArea(b);
+        if (aArea < bArea)
+            return a;
+        else if (aArea > bArea)
+            return b;
+        return null;
+    }
+
+    public Quadrado quadradoDeMenorArea(Quadrado a, Quadrado b) {
+        double aArea = calcularArea(a);
+        double bArea = calcularArea(b);
+        if (aArea < bArea)
+            return a;
+        else if (aArea > bArea)
+            return b;
+        return null;
+    }
 }

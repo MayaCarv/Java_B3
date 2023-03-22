@@ -19,4 +19,10 @@ public class Triangulo {
     public void setAltura(double altura) {
         this.altura = altura;
     }
+
+    @Override
+    public String toString() {
+        return "Triangulo de " +
+                altura + "cm de altura e " + base + "cm de base.";
+    }
 }
